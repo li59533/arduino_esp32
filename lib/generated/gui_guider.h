@@ -20,8 +20,29 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_img_1;
 	lv_obj_t *screen_label_1;
+	lv_obj_t *screen_btn_tmp;
+	lv_obj_t *screen_btn_tmp_label;
+	lv_obj_t *screen_btn_cur;
+	lv_obj_t *screen_btn_cur_label;
+	lv_obj_t *screen_tmp;
+	bool screen_tmp_del;
+	lv_obj_t *screen_tmp_label_1;
+	lv_obj_t *screen_tmp_btn_1;
+	lv_obj_t *screen_tmp_btn_1_label;
+	lv_obj_t *screen_tmp_btn_2;
+	lv_obj_t *screen_tmp_btn_2_label;
+	lv_obj_t *screen_tmp_btn_3;
+	lv_obj_t *screen_tmp_btn_3_label;
+	lv_obj_t *screen_cur;
+	bool screen_cur_del;
+	lv_obj_t *screen_cur_label_1;
+	lv_obj_t *screen_cur_label_2;
+	lv_obj_t *screen_cur_label_3;
+	lv_obj_t *screen_cur_label_4;
+	lv_obj_t *screen_cur_label_setcur;
+	lv_obj_t *screen_cur_label_realcur;
+	lv_obj_t *screen_cur_label_status;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -56,10 +77,12 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
+void setup_scr_screen_tmp(lv_ui *ui);
+void setup_scr_screen_cur(lv_ui *ui);
 
-LV_FONT_DECLARE(lv_font_FontAwesome5_16)
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
-
+// LV_FONT_DECLARE(lv_font_montserratMedium_16)
+//LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(my_font)
 
 #ifdef __cplusplus
 }

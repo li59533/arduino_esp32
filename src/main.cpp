@@ -106,6 +106,7 @@ void setup()
         LED_TOGGLE();       /* ∫Ïµ∆…¡À∏ */
     }
 
+    Serial.print("my_gui_start ");
     my_gui_start();
 
 
