@@ -512,6 +512,6 @@
  .pio/libdeps/esp32s3usbotg/TFT_eSPI/Extensions/Smooth_font.h \
  .pio/libdeps/esp32s3usbotg/TFT_eSPI/Extensions/Button.h \
  .pio/libdeps/esp32s3usbotg/TFT_eSPI/Extensions/Sprite.h \
- include/spi_sdcard.h include/led.h include/uart.h \
- lib/generated/gui_guider.h include/my_gui.h \
+ lib/my_bsp/spi_sdcard.h lib/my_bsp/led.h lib/my_bsp/uart.h \
+ lib/generated/gui_guider.h lib/my_bsp/my_gui.h \
  C:/Users/Bigym/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/include/freertos/include/freertos/FreeRTOS.h
