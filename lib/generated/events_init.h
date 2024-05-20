@@ -22,6 +22,8 @@ void events_init_screen(lv_ui *ui);
 void events_init_screen_tmp(lv_ui *ui);
 void events_init_screen_cur(lv_ui *ui);
 
+void events_init_screen_start(lv_ui *ui);
+
 #ifdef __cplusplus
 }
 #endif

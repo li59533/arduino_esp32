@@ -23,6 +23,9 @@
         "custom.h": "c",
         "lv_layouts.h": "c",
         "lv_libs.h": "c",
-        "lv_gif.h": "c"
+        "lv_gif.h": "c",
+        "tft_espi.h": "c",
+        "lv_port_disp.h": "c",
+        "my_gui.h": "c"
     }
 }

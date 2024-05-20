@@ -15,7 +15,6 @@
 #include "custom.h"
 
 
-
 void setup_scr_screen(lv_ui *ui)
 {
 	//Write codes screen
@@ -25,15 +24,18 @@ void setup_scr_screen(lv_ui *ui)
 
 	//Write style for screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen, lv_color_hex(0x0093ff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	// lv_obj_set_style_bg_color(ui->screen, lv_color_hex(0x0093ff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->screen, lv_palette_main(LV_PALETTE_YELLOW), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_dir(ui->screen, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes screen_label_1
 	ui->screen_label_1 = lv_label_create(ui->screen);
 	lv_label_set_text(ui->screen_label_1, "控制选择");
 	lv_label_set_long_mode(ui->screen_label_1, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->screen_label_1, 50, 3);
+	lv_obj_set_pos(ui->screen_label_1, 50, 13);
 	lv_obj_set_size(ui->screen_label_1, 144, 38);
+
+
 
 	//Write style for screen_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -101,6 +103,24 @@ void setup_scr_screen(lv_ui *ui)
 
 	//The custom code of screen.
 	
+
+    /*Later you should create group(s) with `lv_group_t * group = lv_group_create()`,
+     *add objects to the group with `lv_group_add_obj(group, obj)`
+     *and assign this input device to group to navigate in it:
+     *`lv_indev_set_group(indev_keypad, group);`*/
+
+
+	extern lv_indev_t * indev_keypad ; 
+	lv_group_t * group = lv_group_create();
+	lv_indev_set_group(indev_keypad, group);
+	lv_group_set_editing(group , false);
+	lv_group_add_obj(group, ui->screen_btn_cur);
+	lv_group_add_obj(group, ui->screen_btn_tmp);
+
+
+
+
+
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->screen);

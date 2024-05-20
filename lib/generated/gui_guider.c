@@ -145,11 +145,19 @@ void init_scr_del_flag(lv_ui *ui)
 	ui->screen_del = true;
 	ui->screen_tmp_del = true;
 	ui->screen_cur_del = true;
+	ui->screen_start_del = true;
 }
 
 void setup_ui(lv_ui *ui)
 {
 	init_scr_del_flag(ui);
-	setup_scr_screen(ui);
-	lv_scr_load(ui->screen);
+	
+	//setup_scr_screen(ui);
+	// setup_scr_screen_cur(ui);
+	//setup_scr_screen_tmp(ui);
+	setup_scr_screen_start(ui);
+
+	//lv_scr_load(ui->screen);
+	lv_scr_load(ui->screen_start_base);
+	//lv_scr_load(ui->screen_tmp);
 }

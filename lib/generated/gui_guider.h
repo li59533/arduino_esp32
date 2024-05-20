@@ -43,6 +43,12 @@ typedef struct
 	lv_obj_t *screen_cur_label_setcur;
 	lv_obj_t *screen_cur_label_realcur;
 	lv_obj_t *screen_cur_label_status;
+	lv_obj_t *screen_start;
+	lv_obj_t *screen_start_base;
+	bool screen_start_del;
+	lv_obj_t *screen_start_btn_1;
+	lv_obj_t *screen_start_btn_1_label;
+
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -79,6 +85,7 @@ extern lv_ui guider_ui;
 void setup_scr_screen(lv_ui *ui);
 void setup_scr_screen_tmp(lv_ui *ui);
 void setup_scr_screen_cur(lv_ui *ui);
+void setup_scr_screen_start(lv_ui *ui);
 
 // LV_FONT_DECLARE(lv_font_montserratMedium_16)
 //LV_FONT_DECLARE(lv_font_montserratMedium_12)

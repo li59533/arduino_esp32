@@ -25,7 +25,7 @@ void setup_scr_screen_tmp(lv_ui *ui)
 
 	//Write style for screen_tmp, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->screen_tmp, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->screen_tmp, lv_color_hex(0x0093ff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->screen_tmp, lv_palette_main(LV_PALETTE_YELLOW), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_grad_dir(ui->screen_tmp, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes screen_tmp_label_1
@@ -123,9 +123,18 @@ void setup_scr_screen_tmp(lv_ui *ui)
 	lv_obj_set_style_text_align(ui->screen_tmp_btn_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//The custom code of screen_tmp.
-	
+	extern lv_indev_t * indev_keypad ; 
+	lv_group_t * group = lv_group_create();
+	lv_indev_set_group(indev_keypad, group);
+	lv_group_set_editing(group , false);
+	lv_group_add_obj(group, ui->screen_tmp_btn_1);
+	lv_group_add_obj(group, ui->screen_tmp_btn_2);
+	lv_group_add_obj(group, ui->screen_tmp_btn_3);
+
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->screen_tmp);
 
+
+	events_init_screen_tmp(ui);
 }
