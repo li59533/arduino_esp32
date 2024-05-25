@@ -15,7 +15,8 @@
 
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
-
+#include "app_ads1115.h"
+#include "app_dac8411.h"
 #include "adc.h"
 
 // ------------------- end include ----------------
@@ -78,6 +79,9 @@ void setup()
 
     led_init();
     uart_init(0, 115200); /* ??0??? */
+
+    
+
     lv_init();
     lv_port_disp_init();
     lv_port_indev_init();
@@ -99,11 +103,15 @@ void setup()
     // // disp_drv.rotated = LV_DISP_ROT_270 ;
     // lv_disp_drv_register(&disp_drv);
 
-    while (sdcard_init()) /* ��ⲻ��SD�� */
-    {
-        delay(500);
-        LED_TOGGLE(); /* �����˸ */
-    }
+    // while (sdcard_init()) /* ��ⲻ��SD�� */
+    // {
+    //     delay(500);
+    //     LED_TOGGLE(); /* �����˸ */
+    // }
+
+
+    //App_ads1115_init();
+    App_dac8411_init();
 
     Serial.print("my_gui_start ");
     my_gui_start();
@@ -116,13 +124,13 @@ void setup()
         5,
         &task_handle_first);
 
-    // xTaskCreate(
-    //     task_sec,
-    //     "tasksec",
-    //     3 * 1024,
-    //     NULL,
-    //     4,
-    //     &task_handle_sec);
+    xTaskCreate(
+        task_sec,
+        "tasksec",
+        3 * 1024,
+        NULL,
+        5,
+        &task_handle_sec);
 
     // xTaskCreate(
     //     task_key,
@@ -146,7 +154,7 @@ void task_first(void *parm)
 {
     while (1)
     {
-        lv_event_send(guider_ui.screen_cur_label_setcur , LV_EVENT_VALUE_CHANGED ,NULL);
+        lv_event_send(guider_ui.screen_cur_label_4 , LV_EVENT_VALUE_CHANGED ,NULL);
         delay(100);
         /* code */
     }
@@ -158,8 +166,11 @@ void task_sec(void *parm)
 
     while (1)
     {
-        Serial.print("task_sec\r\n ");
-        delay(5000);
+        //Serial.print("task_sec\r\n ");
+
+        //App_ads1115_test_process();
+        App_dac8411_test_process();
+        //delay(1000);
         /* code */
     }
 

@@ -40,9 +40,25 @@ typedef struct
 	lv_obj_t *screen_cur_label_2;
 	lv_obj_t *screen_cur_label_3;
 	lv_obj_t *screen_cur_label_4;
-	lv_obj_t *screen_cur_label_setcur;
-	lv_obj_t *screen_cur_label_realcur;
-	lv_obj_t *screen_cur_label_status;
+	lv_obj_t *screen_cur_label_5;
+	lv_obj_t *screen_cur_spinbox_1;
+	lv_obj_t *screen_cur_spinbox_1_btn;
+	lv_obj_t *screen_cur_spinbox_1_btn_minus;
+	lv_obj_t *screen_cur_line_1;
+	lv_obj_t *screen_cur_line_2;
+	lv_obj_t *screen_cur_sw_1;
+	lv_obj_t *screen_cur_label_6;
+	lv_obj_t *screen_cur_label_7;
+	lv_obj_t *screen_cur_label_8;
+	lv_obj_t *screen_cur_label_9;
+	lv_obj_t *screen_cur_label_10;
+	lv_obj_t *screen_cur_label_11;
+	lv_obj_t *screen_cur_label_12;
+	lv_obj_t *screen_cur_line_3;
+	lv_obj_t *screen_cur_line_4;
+	lv_obj_t *screen_cur_btn_1;
+	lv_obj_t *screen_cur_btn_1_label;
+	lv_obj_t *screen_cur_led_1;
 	lv_obj_t *screen_start;
 	lv_obj_t *screen_start_base;
 	bool screen_start_del;
@@ -90,6 +106,9 @@ void setup_scr_screen_start(lv_ui *ui);
 // LV_FONT_DECLARE(lv_font_montserratMedium_16)
 //LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(my_font)
+
+LV_FONT_DECLARE(my_font_27)
+LV_FONT_DECLARE(my_font_20)
 
 #ifdef __cplusplus
 }

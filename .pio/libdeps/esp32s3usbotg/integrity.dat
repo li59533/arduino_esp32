@@ -1,6 +1,8 @@
+br3ttb/PID@^1.2.1
+ruiseixasm/Versatile_RotaryEncoder@^1.3.1
+robtillaart/DAC8551@^0.4.0
+lvgl/lvgl@8.3.11
 Wire
 tridenttd/TridentTD_ESP32NVS@^1.4
-robtillaart/DAC8551@^0.4.0
 bodmer/TFT_eSPI@^2.5.43
-lvgl/lvgl@8.3.11
-ruiseixasm/Versatile_RotaryEncoder@^1.3.1
+adafruit/Adafruit ADS1X15@^2.5.0
